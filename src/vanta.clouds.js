@@ -151,13 +151,12 @@ void main(){
     vec2 p = (-iResolution.xy + 2.0*gl_FragCoord.xy)/ iResolution.y;
 
     vec2 m = iMouse.xy/iResolution.xy;
-    m.y = (1.0 - m.y) * 0.33 + 0.28; // camera height
+    m.y = (0.75 - m.y); // camera height
 
-    m.x *= 0.25;
-    m.x += sin(iTime * 0.1 + 3.1415) * 0.25 + 0.25;
+    m.x *= -0.25;
 
     // camera
-    vec3 ro = 4.0*normalize(vec3(sin(3.0*m.x), 0.4*m.y, cos(3.0*m.x))); // origin
+    vec3 ro = 4.0*normalize(vec3(m.x, 0.4*m.y, cos(0.01*m.x))); // origin
     vec3 ta = vec3(0.0, -1.0, 0.0);
     mat3 ca = setCamera( ro, ta, 0.0 );
     // ray
