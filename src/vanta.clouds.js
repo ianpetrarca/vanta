@@ -4,17 +4,19 @@ class Effect extends ShaderBase {}
 export default VANTA.register('CLOUDS', Effect)
 
 Effect.prototype.defaultOptions = {
-  backgroundColor: 0xffffff,
-  skyColor: 0x68b8d7, // 0x99b5bf,
-  cloudColor: 0xadc1de,
-  cloudShadowColor: 0x183550,
-  sunColor: 0xff9919, // 0x1a9eaa
-  sunGlareColor: 0xff6633,
-  sunlightColor: 0xff9933, // 0x1a9eaa
-  scale: 3,
-  scaleMobile: 12,
-  speed: 1,
-  mouseEase: true,
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    backgroundColor: 0x0,
+    skyColor: 0x0,
+    cloudColor: 0x1b1b1b,
+    cloudShadowColor: 0x898a8c,
+    sunColor: 0x0,
+    sunGlareColor: 0x0,
+    sunlightColor: 0x0,
+    speed: 0.60
 }
 
 Effect.prototype.fragmentShader = `\
